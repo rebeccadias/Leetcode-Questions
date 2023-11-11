@@ -1,0 +1,25 @@
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+logic is to iterate through the array of prices while keeping track of the minimum price seen so far and the maximum profit that can be made
+ """
+
+        # Handle edge cases: empty list or list with only one price
+        if len(prices) < 2:
+            return 0
+        min_price = float('inf')
+        max_profit = 0
+
+        for price in prices:
+            # Update the minimum price if the current price is lower
+            min_price = min(min_price, price)
+
+            # Calculate the potential profit if selling at the current price
+            potential_profit = price - min_price
+
+            # Update the maximum profit if the potential profit is higher
+            max_profit = max(max_profit, potential_profit)
+
+        return max_profit
