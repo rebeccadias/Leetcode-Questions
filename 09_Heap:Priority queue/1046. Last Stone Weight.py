@@ -1,6 +1,7 @@
 import heapq
 class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
+        #making max-heap
         for n in range(len(stones)):
             stones[n]=-1*stones[n]
         print(stones)
