@@ -1,3 +1,5 @@
+"""palindrome idea ... should know when to stop and when to not """
+
 class Solution:
     def isHappy(self, n: int) -> bool:
         
