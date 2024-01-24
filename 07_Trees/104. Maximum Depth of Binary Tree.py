@@ -28,4 +28,27 @@ maintain a stack ... used the iterative approach in this question instead of rec
 """
 
 
-        
+        # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    # def __init__(self):
+    #     self.depth=0
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        def maxx(root):
+            if root is None:
+                return 0
+            else:
+                l=maxx(root.left)
+                r=maxx(root.right)
+                # self.depth=max(self.depth,l+r)
+                return max(l,r)+1
+        # maxx(root)
+        return maxx(root)
+"""
+Done recursively 
+
+"""
